@@ -9,7 +9,7 @@ const Reviews = () => {
   useEffect(() => {
     getReviewsById(movieid).then(setReviews);
   }, [movieid]);
-  console.log(reviews);
+
   return (
     <>
       <ul>

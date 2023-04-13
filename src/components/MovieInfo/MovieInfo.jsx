@@ -1,20 +1,13 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 const MovieInfo = ({ movie }) => {
   const location = useLocation();
-  const nav = useNavigate();
-  // const backLink = location.state?.page ?? '/';
-  console.log(location.state?.page);
+
   const { title, poster_path, release_date, overview, genres, vote_average } =
     movie;
   return (
     <>
-      <button
-        onClick={() => {
-          nav(-1);
-        }}
-      >
-        back
-        {/* <Link to={backLink}>Back</Link> */}
+      <button>
+        <Link to={location.state?.from ?? '/'}>Go back</Link>
       </button>
       <div>
         <img src={`https://www.themoviedb.org/t/p/w300${poster_path}`} alt="" />

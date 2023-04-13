@@ -8,7 +8,7 @@ const Cast = () => {
   useEffect(() => {
     getCastById(movieid).then(setCast);
   }, [movieid]);
-  console.log(cast);
+
   return (
     <ul>
       {cast &&
